@@ -51,6 +51,7 @@ class PrliAppController extends PrliBaseController {
     add_action('wp_ajax_pl_dismiss_upgrade_header', array($this, 'dismiss_upgrade_header'));
     add_action('wp_ajax_prli_dismiss_notice', array($this, 'dismiss_notice'));
     add_action('wp_ajax_prli_dismiss_daily_notice', array($this, 'dismiss_daily_notice'));
+    add_action('wp_ajax_prli_dismiss_monthly_notice', array($this, 'dismiss_monthly_notice'));
 
     // Admin footer text.
     add_filter('admin_footer_text', array($this, 'admin_footer'), 1, 2);
@@ -128,6 +129,15 @@ class PrliAppController extends PrliBaseController {
     if(check_ajax_referer('prli_dismiss_notice', false, false) && isset($_POST['notice']) && is_string($_POST['notice'])) {
       $notice = sanitize_key($_POST['notice']);
       set_transient("prli_dismiss_notice_{$notice}", true, DAY_IN_SECONDS);
+    }
+
+    wp_send_json_success();
+  }
+
+  public function dismiss_monthly_notice() {
+    if(check_ajax_referer('prli_dismiss_notice', false, false) && isset($_POST['notice']) && is_string($_POST['notice'])) {
+      $notice = sanitize_key($_POST['notice']);
+      set_transient("prli_dismiss_notice_{$notice}", true, DAY_IN_SECONDS * 30);
     }
 
     wp_send_json_success();

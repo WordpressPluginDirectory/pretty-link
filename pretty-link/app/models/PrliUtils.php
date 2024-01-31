@@ -867,9 +867,12 @@ class PrliUtils {
       $title = html_entity_decode(trim($matches[1]));
     }
 
-    //Attempt to covert cyrillic and other weird shiz to UTF-8 - if it fails we'll just return the slug next
+    // Attempt to convert cyrillic and other characters to UTF-8 - if it fails we'll just return the slug next
     if(extension_loaded('mbstring') && function_exists('iconv')) {
-      $title = iconv(mb_detect_encoding($title, mb_detect_order(), true), "UTF-8", $title);
+      $current_encoding_order = mb_detect_order();
+      $current_encoding_order[] = 'ISO-8859-1'; // Add the ISO encoding if it's potentially not there already.
+
+      $title = @iconv(mb_detect_encoding($title, array_unique($current_encoding_order), true), "UTF-8", $title);
     }
 
     if(empty($title) or !$title) {

@@ -13,6 +13,7 @@ class PrliLinksController extends PrliBaseController {
     add_action( 'transition_post_status', array($this, 'transition_cpt_status'), 10, 3 );
     add_filter( 'redirect_post_location', array($this, 'redirect_post_location'), 10, 2 );
     add_action( 'admin_notices', array($this, 'link_saved_admin_notice') );
+    add_action( 'admin_notices', array($this, 'fee_admin_notice') );
     add_action( 'wp_ajax_validate_pretty_link', array($this,'ajax_validate_pretty_link') );
     add_action( 'wp_ajax_reset_pretty_link', array($this,'ajax_reset_pretty_link') );
     add_action( 'wp_ajax_prli_quick_create', array($this, 'ajax_quick_create'));
@@ -370,6 +371,21 @@ class PrliLinksController extends PrliBaseController {
       elseif($message == 6) {
         $message = !empty($_REQUEST['prettypay']) ? __('PrettyPay™ Link created.', 'pretty-link') : __('Pretty Link created.', 'pretty-link');
         printf('<div class="notice notice-success is-dismissible"><p>%s</p></div>', esc_html($message));
+      }
+    }
+  }
+
+  public function fee_admin_notice() {
+    global $plp_update;
+
+    if(isset($_GET['prettypay']) && $_GET['prettypay'] == '1') {
+      $license = $plp_update->get_license_info();
+      $license = is_array($license) && isset($license['license_key']) && is_array($license['license_key']);
+
+      $is_dismissed = get_transient('prli_dismiss_notice_fee_3');
+
+      if(!$is_dismissed && !$license && PrliStripeConnect::is_active()) {
+        include_once PRLI_VIEWS_PATH . "/prettypay/fee_notice.php";
       }
     }
   }
@@ -800,7 +816,7 @@ class PrliLinksController extends PrliBaseController {
     $current_screen = get_current_screen();
 
     if($current_screen instanceof WP_Screen && $current_screen->post_type == PrliLink::$cpt && $current_screen->id == 'edit-pretty-link') {
-      $post_status = isset($_GET['post_status']) ? sanitize_text_field(wp_unslash($_GET['post_status'])) : '';
+      $post_status = isset($_GET['post_status']) ? esc_attr(sanitize_text_field(wp_unslash($_GET['post_status']))) : '';
 
       if($post_status) {
         $body_class .= " prli-post-status-$post_status ";

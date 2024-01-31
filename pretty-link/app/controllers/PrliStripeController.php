@@ -83,7 +83,7 @@ class PrliStripeController extends PrliBaseController {
       $values['stripe_shipping_address_allowed_countries'] = $this->sanitize_shipping_countries($_REQUEST['prli_stripe_shipping_address_allowed_countries']);
     }
     else {
-      $values['stripe_shipping_address_allowed_countries'] = explode(', ', $prli_link_meta->get_link_meta($record->id, 'stripe_shipping_address_allowed_countries', true));
+      $values['stripe_shipping_address_allowed_countries'] = explode(', ', $prli_link_meta->get_link_meta($record->id, 'stripe_shipping_address_allowed_countries', true) ?? '');
     }
 
     if(isset($_REQUEST['prli_stripe_phone_number_collection'])) {
