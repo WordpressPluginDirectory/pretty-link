@@ -37,6 +37,12 @@ class PrliOptionsController extends PrliBaseController {
     // See if the user has posted us some information
     // If they did, this hidden field will be set to 'Y'
     if( isset($_REQUEST[ $hidden_field_name ]) && $_REQUEST[ $hidden_field_name ] == 'Y' ) {
+      // Check the nonce before update options.
+      if ( empty( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'update-options' ) ) {
+        status_header( 403, 'Forbidden' );
+        wp_die();
+      }
+
       $update_message = $this->update();
     }
 

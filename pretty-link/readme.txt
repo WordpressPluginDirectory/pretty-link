@@ -3,9 +3,9 @@ Contributors: supercleanse, cartpauj
 Donate link: https://prettylinks.com
 Tags: affiliate links, link branding, link shortner, link tracking, redirects, affiliate, affiliate marketing, affiliates, short links, shorten, shortening, shortlink, shortlinks, shorturl, shrinking, marketing, marketing plugin, cloak, cloaker, cloaking, 301, 302, 307, 404, bit.ly, bitly, tinyurl, link cloaking, link redirection, link shortener, links, pretty links, url redirection, url shortener, urls, seo, slug, slugs, payments, checkout, stripe
 Requires at least: 5.1
-Requires PHP: 7.0
+Requires PHP: 7.2
 Tested up to: 6.4
-Stable tag: 3.6.3
+Stable tag: 3.6.4
 
 🌠 The best WordPress link management, branding, tracking & sharing plugin. Easily make pretty & trackable shortlinks. 🔗
 
@@ -137,6 +137,9 @@ Yes! Pretty Links is ready for translation. See our [Translating Pretty Links](h
 4. Click Tracking
 
 == Changelog ==
+= 3.6.4 =
+* Security fixes (potential for CSRF patched)
+
 = 3.6.3 =
 * Add section for PrettyPay™ within the Welcome and Complete steps for in-plugin onboarding
 * Add notice of 3% fee to PrettyPay™ Links sub-page for free users

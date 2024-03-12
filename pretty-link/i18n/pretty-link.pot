@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Pretty Links plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Pretty Links 3.6.3\n"
+"Project-Id-Version: Pretty Links 3.6.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pretty-link\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-30T09:47:44-07:00\n"
+"POT-Creation-Date: 2024-03-11T15:09:40-06:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: pretty-link\n"
@@ -118,6 +118,8 @@ msgstr ""
 #: app/controllers/PrliAddonsController.php:109
 #: app/controllers/PrliAddonsController.php:132
 #: app/controllers/PrliOnboardingController.php:204
+#: app/controllers/PrliPostsController.php:151
+#: app/controllers/PrliPostsController.php:174
 #: app/controllers/PrliUpdateController.php:74
 #: app/controllers/PrliUpdateController.php:169
 #: app/controllers/PrliUpdateController.php:208
@@ -392,15 +394,15 @@ msgstr ""
 msgid "PrettyPay™ Thank You Page"
 msgstr ""
 
-#: app/controllers/PrliClicksController.php:90
+#: app/controllers/PrliClicksController.php:94
 msgid "IP Address: "
 msgstr ""
 
-#: app/controllers/PrliClicksController.php:95
+#: app/controllers/PrliClicksController.php:99
 msgid "Visitor: "
 msgstr ""
 
-#: app/controllers/PrliClicksController.php:100
+#: app/controllers/PrliClicksController.php:104
 msgid "All Links"
 msgstr ""
 
@@ -883,23 +885,23 @@ msgstr ""
 msgid "Welcome back! It seems the excitement of setting up Pretty Links got the best of you. No worries! %1$sClick here%2$s and we'll whisk you back to where you left off."
 msgstr ""
 
-#: app/controllers/PrliOptionsController.php:64
+#: app/controllers/PrliOptionsController.php:70
 msgid "Options saved."
 msgstr ""
 
-#: app/controllers/PrliOptionsController.php:78
+#: app/controllers/PrliOptionsController.php:84
 msgid "Excluded IP Addresses must be a comma separated list of IPv4 or IPv6 addresses or ranges."
 msgstr ""
 
-#: app/controllers/PrliOptionsController.php:82
+#: app/controllers/PrliOptionsController.php:88
 msgid "Whitelist IP Addresses must be a comma separated list of IPv4 or IPv6 addresses or ranges."
 msgstr ""
 
-#: app/controllers/PrliOptionsController.php:109
+#: app/controllers/PrliOptionsController.php:115
 msgid "Thank You"
 msgstr ""
 
-#: app/controllers/PrliOptionsController.php:110
+#: app/controllers/PrliOptionsController.php:116
 msgid "Thank you for your purchase."
 msgstr ""
 
