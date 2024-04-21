@@ -25,9 +25,9 @@ class PrliAppController extends PrliBaseController {
     add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
     add_action('admin_menu', array($this, 'menu'), 3); //Hooking in earlier - there's a plugin out there somewhere breaking this action for later plugins
 
-    add_action('custom_menu_order', array($this,'admin_menu_order'));
-    add_action('menu_order', array($this,'admin_menu_order'));
-    add_action('menu_order', array($this,'admin_submenu_order'));
+    add_filter('custom_menu_order', '__return_true');
+    add_filter('menu_order', array($this, 'admin_menu_order'));
+    add_filter('menu_order', array($this, 'admin_submenu_order'));
     add_filter('display_post_states', array($this, 'add_post_states'), 10, 2);
 
     //Where the magic happens when not in wp-admin nor !GET request
@@ -258,10 +258,6 @@ class PrliAppController extends PrliBaseController {
    * @return array Modified menu order
    */
   public function admin_menu_order($menu_order) {
-    if(!$menu_order) {
-      return true;
-    }
-
     if(!is_array($menu_order)) {
       return $menu_order;
     }

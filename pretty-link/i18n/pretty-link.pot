@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the Pretty Links plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Pretty Links 3.6.4\n"
+"Project-Id-Version: Pretty Links 3.6.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pretty-link\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-03-11T15:09:40-06:00\n"
+"POT-Creation-Date: 2024-04-20T22:46:41-06:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: pretty-link\n"
 
 #. Plugin Name of the plugin
 #. Author of the plugin
-#: app/controllers/PrliAppController.php:350
+#: app/controllers/PrliAppController.php:346
 #: app/controllers/PrliLinksController.php:65
 #: app/controllers/PrliLinksController.php:542
 #: app/controllers/PrliPostsController.php:59
@@ -279,116 +279,116 @@ msgstr ""
 msgid "Welcome"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:377
-#: app/controllers/PrliAppController.php:383
-#: app/controllers/PrliAppController.php:388
-#: app/controllers/PrliAppController.php:892
+#: app/controllers/PrliAppController.php:373
+#: app/controllers/PrliAppController.php:379
+#: app/controllers/PrliAppController.php:384
+#: app/controllers/PrliAppController.php:888
 msgid "Docs"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:378
+#: app/controllers/PrliAppController.php:374
 #: app/views/admin/update/ui.php:3
 msgid "Manage License"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:381
-#: app/controllers/PrliAppController.php:387
+#: app/controllers/PrliAppController.php:377
+#: app/controllers/PrliAppController.php:383
 msgid "Activate Pro License"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:382
+#: app/controllers/PrliAppController.php:378
 msgid "Buy"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:386
+#: app/controllers/PrliAppController.php:382
 #: app/helpers/PrliOnboardingHelper.php:243
 #: app/views/admin/update/inactive_license.php:28
 #: app/views/shared/nav.php:9
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:498
+#: app/controllers/PrliAppController.php:494
 #: app/views/groups/edit.php:72
 #: app/views/options/form.php:1221
 #: pro/app/views/reports/edit.php:66
 msgid "Update"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:500
+#: app/controllers/PrliAppController.php:496
 msgid "Copy to Clipboard"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:501
+#: app/controllers/PrliAppController.php:497
 msgid "Copied!"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:502
+#: app/controllers/PrliAppController.php:498
 msgid "Oops, Copy Failed!"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:526
+#: app/controllers/PrliAppController.php:522
 msgid "Are you sure you want to reset your Pretty Link? This will delete all of the statistical data about this Pretty Link in your database."
 msgstr ""
 
-#: app/controllers/PrliAppController.php:529
+#: app/controllers/PrliAppController.php:525
 msgid "To access Link Health, upgrade to <a href=\"%s\" class=\"prli-link-health-upgrade\">Pretty Links Pro.</a>"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:544
+#: app/controllers/PrliAppController.php:540
 msgid "Find or add a product..."
 msgstr ""
 
-#: app/controllers/PrliAppController.php:546
+#: app/controllers/PrliAppController.php:542
 msgid "Select shipping countries"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:548
+#: app/controllers/PrliAppController.php:544
 msgid "This field is required"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s: open link tag, %3$s: close link tag
-#: app/controllers/PrliAppController.php:658
+#: app/controllers/PrliAppController.php:654
 msgid "You're almost done!%1$s%2$sFinish your Re-Install of Pretty Links Pro%3$s"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:673
+#: app/controllers/PrliAppController.php:669
 msgid "Pretty Links Pro Successfully Uninstalled."
 msgstr ""
 
-#: app/controllers/PrliAppController.php:727
+#: app/controllers/PrliAppController.php:723
 msgid "Invalid server response"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:728
+#: app/controllers/PrliAppController.php:724
 msgid "Ajax error"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:745
+#: app/controllers/PrliAppController.php:741
 msgid "Pretty Link Quick Add"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:784
+#: app/controllers/PrliAppController.php:780
 msgid "Your Pretty Links Pro installation isn't quite complete yet. %1$sAutomatically Upgrade to Enable Pretty Links Pro%2$s"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:805
+#: app/controllers/PrliAppController.php:801
 msgid "Your Pretty Links Pro installation isn't quite complete yet.<br/>%1$sAutomatically Upgrade to Enable Pretty Links Pro%2$s"
 msgstr ""
 
 #. translators: $1$s - Pretty Links plugin name; $2$s - WP.org review link; $3$s - WP.org review link.
-#: app/controllers/PrliAppController.php:853
+#: app/controllers/PrliAppController.php:849
 msgid "Enjoying %1$s? Please rate <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href=\"%3$s\" target=\"_blank\" rel=\"noopener\">WordPress.org</a> to help us spread the word. Thanks from the Pretty Links team!"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:887
+#: app/controllers/PrliAppController.php:883
 msgid "Support"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:897
+#: app/controllers/PrliAppController.php:893
 msgid "Made with ♥ by the Pretty Links Team"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:945
+#: app/controllers/PrliAppController.php:941
 #: app/views/admin/payments/options.php:151
 #: app/views/admin/payments/options.php:153
 msgid "PrettyPay™ Thank You Page"
@@ -1578,11 +1578,11 @@ msgid "This Pretty Link Slug is already taken. There's already another pretty li
 msgstr ""
 
 #. translators: %1$s: open link tag, %2$s: close link tag, %3$s: br tag
-#: app/models/PrliUtils.php:1089
+#: app/models/PrliUtils.php:1091
 msgid "Get started by %1$sadding a URL%2$s that you want to turn into a pretty link.%3$sCome back to see how many times it was clicked."
 msgstr ""
 
-#: app/models/PrliUtils.php:1392
+#: app/models/PrliUtils.php:1394
 msgid "NEW"
 msgstr ""
 

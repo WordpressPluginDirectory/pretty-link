@@ -853,10 +853,12 @@ class PrliUtils {
   /** Attempt to get a page title from the target url */
   public static function get_page_title($url, $slug='') {
     $title = '';
-    $wp_http = new WP_Http;
-    $result = $wp_http->request( $url, array( 'sslverify' => false ) );
+    $result = wp_remote_get($url, array(
+      'sslverify' => false,
+      'user-agent' => sprintf('PrettyLinks/%s; %s', PRLI_VERSION, home_url('/')),
+    ));
 
-    if(!$result or is_a($result, 'WP_Error') or !isset($result['body'])) {
+    if(!$result || is_a($result, 'WP_Error') || !isset($result['body'])) {
       return apply_filters('prli-get-page-title-return-slug', $slug, $url);
     }
 
@@ -875,7 +877,7 @@ class PrliUtils {
       $title = @iconv(mb_detect_encoding($title, array_unique($current_encoding_order), true), "UTF-8", $title);
     }
 
-    if(empty($title) or !$title) {
+    if(empty($title)) {
       return apply_filters('prli-get-page-title-return-slug', $slug, $url);
     }
 
