@@ -83,7 +83,8 @@ jQuery(document).ready(function($) {
         post_ids: post_ids,
         nofollow: nofollow,
         sponsored: sponsored,
-        tracking: tracking
+        tracking: tracking,
+        _ajax_nonce: PrliLinkList.nonce
       }
     });
   });

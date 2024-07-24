@@ -1024,7 +1024,6 @@ class PrliStripeController extends PrliBaseController {
       'payment_method_update_enabled' => !empty($_POST['prli_portal_payment_method_update_enabled']),
       'subscription_cancel_enabled' => !empty($_POST['prli_portal_subscription_cancel_enabled']),
       'subscription_cancel_mode' => isset($_POST['prli_portal_subscription_cancel_mode']) && $_POST['prli_portal_subscription_cancel_mode'] == 'immediately' ? 'immediately' : 'at_period_end',
-      'subscription_pause_enabled' => !empty($_POST['prli_portal_subscription_pause_enabled']),
       'invoice_history_enabled' => !empty($_POST['prli_portal_invoice_history_enabled'])
     );
 
@@ -1043,7 +1042,6 @@ class PrliStripeController extends PrliBaseController {
         'payment_method_update_enabled' => PrliUtils::array_get($portal, 'features.payment_method_update.enabled'),
         'subscription_cancel_enabled' => PrliUtils::array_get($portal, 'features.subscription_cancel.enabled'),
         'subscription_cancel_mode' => PrliUtils::array_get($portal, 'features.subscription_cancel.mode'),
-        'subscription_pause_enabled' => PrliUtils::array_get($portal, 'features.subscription_pause.enabled'),
         'invoice_history_enabled' => PrliUtils::array_get($portal, 'features.invoice_history.enabled')
       );
 
@@ -1073,9 +1071,6 @@ class PrliStripeController extends PrliBaseController {
             'enabled' => $data['subscription_cancel_enabled'] ? 'true' : 'false',
             'mode' => $data['subscription_cancel_mode'] == 'immediately' ? 'immediately' : 'at_period_end',
             'proration_behavior' => 'none'
-          ),
-          'subscription_pause' => array(
-            'enabled' => $data['subscription_pause_enabled'] ? 'true' : 'false',
           )
         ),
         'default_return_url' => home_url('/'),

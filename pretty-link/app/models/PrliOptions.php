@@ -25,6 +25,7 @@ class PrliOptions
   public $prettybar_link_limit;
 
   public $link_redirect_type;
+  public $link_redirect_action;
   public $link_prefix;
   public $auto_trim_clicks;
   public $link_track_me;

@@ -1,30 +1,21 @@
 # Copyright (C) 2024 Pretty Links
-# This file is distributed under the same license as the Pretty Links plugin.
+# This file is distributed under the same license as the PrettyLinks plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Pretty Links 3.6.6\n"
+"Project-Id-Version: PrettyLinks 3.6.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pretty-link\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-20T22:46:41-06:00\n"
+"POT-Creation-Date: 2024-07-23T14:40:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: pretty-link\n"
 
 #. Plugin Name of the plugin
-#. Author of the plugin
-#: app/controllers/PrliAppController.php:346
-#: app/controllers/PrliLinksController.php:65
-#: app/controllers/PrliLinksController.php:542
-#: app/controllers/PrliPostsController.php:59
-#: app/helpers/PrliOnboardingHelper.php:169
-#: app/views/admin/popups/prettypay.php:81
-#: app/views/admin/popups/prettypay.php:387
-#: pro/app/views/links/prettybar.php:68
-msgid "Pretty Links"
+msgid "PrettyLinks"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -33,6 +24,18 @@ msgstr ""
 
 #. Description of the plugin
 msgid "Shrink, track and share any URL using your website and brand!"
+msgstr ""
+
+#. Author of the plugin
+#: app/controllers/PrliAppController.php:357
+#: app/controllers/PrliLinksController.php:67
+#: app/controllers/PrliLinksController.php:544
+#: app/controllers/PrliPostsController.php:59
+#: app/helpers/PrliOnboardingHelper.php:169
+#: app/views/admin/popups/prettypay.php:81
+#: app/views/admin/popups/prettypay.php:387
+#: pro/app/views/links/prettybar.php:68
+msgid "Pretty Links"
 msgstr ""
 
 #. Author URI of the plugin
@@ -51,11 +54,11 @@ msgid "Inactive"
 msgstr ""
 
 #: app/controllers/PrliAddonsController.php:30
-#: app/controllers/PrliAppController.php:225
-#: app/controllers/PrliAppController.php:228
+#: app/controllers/PrliAppController.php:233
+#: app/controllers/PrliAppController.php:236
 #: app/views/admin/addons/addon-page-lite.php:32
 #: app/views/admin/addons/addon-page-pro.php:90
-#: app/views/admin/onboarding/license.php:16
+#: app/views/admin/onboarding/license.php:17
 msgid "Activate"
 msgstr ""
 
@@ -75,7 +78,7 @@ msgid "Could not install plugin."
 msgstr ""
 
 #: app/controllers/PrliAddonsController.php:49
-#: app/controllers/PrliAppController.php:238
+#: app/controllers/PrliAppController.php:246
 msgid "Add-ons"
 msgstr ""
 
@@ -105,9 +108,9 @@ msgstr ""
 #: app/controllers/PrliOnboardingController.php:732
 #: app/controllers/PrliOnboardingController.php:776
 #: app/controllers/PrliOnboardingController.php:834
-#: app/controllers/PrliStripeConnectController.php:116
-#: app/controllers/PrliStripeConnectController.php:180
-#: app/controllers/PrliStripeConnectController.php:235
+#: app/controllers/PrliStripeConnectController.php:115
+#: app/controllers/PrliStripeConnectController.php:179
+#: app/controllers/PrliStripeConnectController.php:234
 #: app/controllers/PrliUpdateController.php:70
 #: app/controllers/PrliUpdateController.php:165
 #: app/controllers/PrliUpdateController.php:204
@@ -117,6 +120,7 @@ msgstr ""
 #: app/controllers/PrliAddonsController.php:66
 #: app/controllers/PrliAddonsController.php:109
 #: app/controllers/PrliAddonsController.php:132
+#: app/controllers/PrliLinksController.php:711
 #: app/controllers/PrliOnboardingController.php:204
 #: app/controllers/PrliPostsController.php:151
 #: app/controllers/PrliPostsController.php:174
@@ -172,18 +176,18 @@ msgstr ""
 
 #: app/controllers/PrliAppController.php:162
 #: app/controllers/PrliAppController.php:163
-#: app/controllers/PrliLinksController.php:1188
+#: app/controllers/PrliLinksController.php:1227
 msgid "PrettyPay™ Links"
 msgstr ""
 
 #: app/controllers/PrliAppController.php:172
-#: app/controllers/PrliLinksController.php:174
+#: app/controllers/PrliLinksController.php:176
 #: app/controllers/PrliUpdateController.php:738
 msgid "Link Categories"
 msgstr ""
 
 #: app/controllers/PrliAppController.php:173
-#: app/controllers/PrliLinksController.php:501
+#: app/controllers/PrliLinksController.php:503
 #: app/views/admin/popups/prettypay.php:56
 #: app/views/admin/popups/prettypay.php:382
 #: pro/app/controllers/PlpLinkCategoriesController.php:25
@@ -191,13 +195,13 @@ msgid "Categories"
 msgstr ""
 
 #: app/controllers/PrliAppController.php:180
-#: app/controllers/PrliLinksController.php:175
+#: app/controllers/PrliLinksController.php:177
 #: app/controllers/PrliUpdateController.php:744
 msgid "Link Tags"
 msgstr ""
 
 #: app/controllers/PrliAppController.php:181
-#: app/controllers/PrliLinksController.php:502
+#: app/controllers/PrliLinksController.php:504
 #: app/views/admin/popups/prettypay.php:61
 #: app/views/admin/popups/prettypay.php:383
 #: pro/app/controllers/PlpLinkTagsController.php:29
@@ -225,17 +229,25 @@ msgstr ""
 
 #: app/controllers/PrliAppController.php:204
 #: app/controllers/PrliAppController.php:205
+#: app/views/links/form.php:39
+#: app/views/links/form_product_display.php:17
+#: app/views/options/form.php:61
+msgid "Product Display"
+msgstr ""
+
+#: app/controllers/PrliAppController.php:212
+#: app/controllers/PrliAppController.php:213
 #: app/controllers/PrliUpdateController.php:762
 #: pro/app/controllers/PlpImportExportController.php:15
 msgid "Import / Export"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:214
+#: app/controllers/PrliAppController.php:222
 msgid "Pretty Links | Clicks"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:214
-#: app/controllers/PrliLinksController.php:540
+#: app/controllers/PrliAppController.php:222
+#: app/controllers/PrliLinksController.php:542
 #: app/models/PrliClick.php:256
 #: app/views/admin/popups/prettypay.php:71
 #: app/views/admin/popups/prettypay.php:385
@@ -251,146 +263,146 @@ msgstr ""
 msgid "Clicks"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:218
+#: app/controllers/PrliAppController.php:226
 msgid "Pretty Links | Tools"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:218
+#: app/controllers/PrliAppController.php:226
 #: app/views/tools/form.php:3
 msgid "Tools"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:221
+#: app/controllers/PrliAppController.php:229
 msgid "Pretty Links | Options"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:221
+#: app/controllers/PrliAppController.php:229
 #: app/views/links/prettypay_link_stripe.php:107
 #: app/views/options/form.php:3
 msgid "Options"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:231
+#: app/controllers/PrliAppController.php:239
 #: app/views/prettypay/fee_notice.php:7
 msgid "Upgrade"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:235
+#: app/controllers/PrliAppController.php:243
 msgid "Welcome"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:373
-#: app/controllers/PrliAppController.php:379
 #: app/controllers/PrliAppController.php:384
-#: app/controllers/PrliAppController.php:888
+#: app/controllers/PrliAppController.php:390
+#: app/controllers/PrliAppController.php:395
+#: app/controllers/PrliAppController.php:895
 msgid "Docs"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:374
+#: app/controllers/PrliAppController.php:385
 #: app/views/admin/update/ui.php:3
 msgid "Manage License"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:377
-#: app/controllers/PrliAppController.php:383
+#: app/controllers/PrliAppController.php:388
+#: app/controllers/PrliAppController.php:394
 msgid "Activate Pro License"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:378
+#: app/controllers/PrliAppController.php:389
 msgid "Buy"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:382
+#: app/controllers/PrliAppController.php:393
 #: app/helpers/PrliOnboardingHelper.php:243
 #: app/views/admin/update/inactive_license.php:28
 #: app/views/shared/nav.php:9
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:494
+#: app/controllers/PrliAppController.php:490
 #: app/views/groups/edit.php:72
 #: app/views/options/form.php:1221
 #: pro/app/views/reports/edit.php:66
 msgid "Update"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:496
+#: app/controllers/PrliAppController.php:492
 msgid "Copy to Clipboard"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:497
+#: app/controllers/PrliAppController.php:493
 msgid "Copied!"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:498
+#: app/controllers/PrliAppController.php:494
 msgid "Oops, Copy Failed!"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:522
+#: app/controllers/PrliAppController.php:518
 msgid "Are you sure you want to reset your Pretty Link? This will delete all of the statistical data about this Pretty Link in your database."
 msgstr ""
 
-#: app/controllers/PrliAppController.php:525
+#: app/controllers/PrliAppController.php:521
 msgid "To access Link Health, upgrade to <a href=\"%s\" class=\"prli-link-health-upgrade\">Pretty Links Pro.</a>"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:540
+#: app/controllers/PrliAppController.php:537
 msgid "Find or add a product..."
 msgstr ""
 
-#: app/controllers/PrliAppController.php:542
+#: app/controllers/PrliAppController.php:539
 msgid "Select shipping countries"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:544
+#: app/controllers/PrliAppController.php:541
 msgid "This field is required"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s: open link tag, %3$s: close link tag
-#: app/controllers/PrliAppController.php:654
+#: app/controllers/PrliAppController.php:661
 msgid "You're almost done!%1$s%2$sFinish your Re-Install of Pretty Links Pro%3$s"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:669
+#: app/controllers/PrliAppController.php:676
 msgid "Pretty Links Pro Successfully Uninstalled."
 msgstr ""
 
-#: app/controllers/PrliAppController.php:723
+#: app/controllers/PrliAppController.php:730
 msgid "Invalid server response"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:724
+#: app/controllers/PrliAppController.php:731
 msgid "Ajax error"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:741
+#: app/controllers/PrliAppController.php:748
 msgid "Pretty Link Quick Add"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:780
+#: app/controllers/PrliAppController.php:787
 msgid "Your Pretty Links Pro installation isn't quite complete yet. %1$sAutomatically Upgrade to Enable Pretty Links Pro%2$s"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:801
+#: app/controllers/PrliAppController.php:808
 msgid "Your Pretty Links Pro installation isn't quite complete yet.<br/>%1$sAutomatically Upgrade to Enable Pretty Links Pro%2$s"
 msgstr ""
 
 #. translators: $1$s - Pretty Links plugin name; $2$s - WP.org review link; $3$s - WP.org review link.
-#: app/controllers/PrliAppController.php:849
+#: app/controllers/PrliAppController.php:856
 msgid "Enjoying %1$s? Please rate <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href=\"%3$s\" target=\"_blank\" rel=\"noopener\">WordPress.org</a> to help us spread the word. Thanks from the Pretty Links team!"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:883
+#: app/controllers/PrliAppController.php:890
 msgid "Support"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:893
+#: app/controllers/PrliAppController.php:900
 msgid "Made with ♥ by the Pretty Links Team"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:941
-#: app/views/admin/payments/options.php:151
-#: app/views/admin/payments/options.php:153
+#: app/controllers/PrliAppController.php:948
+#: app/views/admin/payments/options.php:111
+#: app/views/admin/payments/options.php:113
 msgid "PrettyPay™ Thank You Page"
 msgstr ""
 
@@ -427,7 +439,7 @@ msgstr ""
 msgid "Notifications "
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:66
+#: app/controllers/PrliLinksController.php:68
 #: app/controllers/PrliOnboardingController.php:432
 #: app/helpers/PrliLinksHelper.php:175
 #: app/helpers/PrliOnboardingHelper.php:162
@@ -438,113 +450,113 @@ msgstr ""
 msgid "Pretty Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:67
+#: app/controllers/PrliLinksController.php:69
 msgid "Add New"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:68
+#: app/controllers/PrliLinksController.php:70
 msgid "Add New Pretty Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:69
+#: app/controllers/PrliLinksController.php:71
 msgid "Edit Pretty Link"
 msgstr ""
 
 #. translators: accessibility label for external links, where the argument is the link text
-#: app/controllers/PrliLinksController.php:70
+#: app/controllers/PrliLinksController.php:72
 #: js/build/editor.js:3
 #: js/editor/components/link-editor/index.js:400
 msgid "New Pretty Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:71
+#: app/controllers/PrliLinksController.php:73
 msgid "View Pretty Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:72
+#: app/controllers/PrliLinksController.php:74
 msgid "Search Pretty Links"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:73
+#: app/controllers/PrliLinksController.php:75
 msgid "No Pretty Links found"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:74
+#: app/controllers/PrliLinksController.php:76
 msgid "No Pretty Links found in Trash"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:75
+#: app/controllers/PrliLinksController.php:77
 msgid "Parent Pretty Link:"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:136
+#: app/controllers/PrliLinksController.php:138
 msgid "Pretty Link Settings"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:144
+#: app/controllers/PrliLinksController.php:146
 msgid "Advanced Features"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:170
+#: app/controllers/PrliLinksController.php:172
 #: app/views/admin/onboarding/welcome.php:101
 msgid "Advanced Redirect Types"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:171
+#: app/controllers/PrliLinksController.php:173
 msgid "Auto Create Pretty Links"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:172
+#: app/controllers/PrliLinksController.php:174
 msgid "Auto-Link Keywords"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:173
+#: app/controllers/PrliLinksController.php:175
 msgid "Support & Updates"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:176
+#: app/controllers/PrliLinksController.php:178
 msgid "Plus Much More!"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:178
+#: app/controllers/PrliLinksController.php:180
 msgid "Tell Me More"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:368
+#: app/controllers/PrliLinksController.php:370
 msgid "PrettyPay™ Link updated."
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:368
+#: app/controllers/PrliLinksController.php:370
 msgid "Pretty Link updated."
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:372
+#: app/controllers/PrliLinksController.php:374
 msgid "PrettyPay™ Link created."
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:372
+#: app/controllers/PrliLinksController.php:374
 msgid "Pretty Link created."
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:456
+#: app/controllers/PrliLinksController.php:458
 msgid "Pretty Link Cleanup Visitor Locks"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:468
-#: app/controllers/PrliLinksController.php:835
+#: app/controllers/PrliLinksController.php:470
+#: app/controllers/PrliLinksController.php:841
 #: app/controllers/PrliPopupController.php:95
 msgid "Forbidden"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:477
+#: app/controllers/PrliLinksController.php:479
 msgid "Success!"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:479
+#: app/controllers/PrliLinksController.php:481
 msgid "Fix the following errors:"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:503
+#: app/controllers/PrliLinksController.php:505
 #: app/views/admin/popups/prettypay.php:66
 #: app/views/admin/popups/prettypay.php:384
 #: app/views/links/form_pro.php:32
@@ -553,210 +565,213 @@ msgstr ""
 msgid "Keywords"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:513
+#: app/controllers/PrliLinksController.php:515
 msgid "Upgrade to a Pretty Links premium plan to get Link Categories"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:515
-#: app/controllers/PrliLinksController.php:521
-#: app/controllers/PrliLinksController.php:527
-#: app/helpers/PrliAppHelper.php:20
+#: app/controllers/PrliLinksController.php:517
+#: app/controllers/PrliLinksController.php:523
+#: app/controllers/PrliLinksController.php:529
+#: app/helpers/PrliAppHelper.php:19
 #: app/helpers/PrliOnboardingHelper.php:241
 #: app/views/links/form.php:37
 msgid "Pro"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:519
+#: app/controllers/PrliLinksController.php:521
 msgid "Upgrade to a Pretty Links premium plan to get Link Tags"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:525
+#: app/controllers/PrliLinksController.php:527
 msgid "Upgrade to a Pretty Links premium plan to get Keyword Replacements"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:533
+#: app/controllers/PrliLinksController.php:535
 #: app/views/admin/popups/prettypay.php:46
 #: app/views/admin/popups/prettypay.php:380
 #: app/views/links/prettypay_link_stripe.php:251
 msgid "Settings"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:534
+#: app/controllers/PrliLinksController.php:536
 #: app/views/admin/popups/prettypay.php:51
 #: app/views/admin/popups/prettypay.php:381
 msgid "Link Title"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:536
+#: app/controllers/PrliLinksController.php:538
 msgid "Target"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:541
+#: app/controllers/PrliLinksController.php:543
 #: app/models/PrliClick.php:256
 #: app/views/admin/popups/prettypay.php:76
 #: app/views/admin/popups/prettypay.php:386
 #: app/views/admin/upgrade/groups.php:13
 #: app/views/admin/upgrade/groups.php:35
+#: app/views/admin/upgrade/products.php:13
+#: app/views/admin/upgrade/products.php:32
 #: pro/app/views/links/form.php:39
 #: pro/app/views/links/form.php:74
 msgid "Date"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:645
+#: app/controllers/PrliLinksController.php:647
 #: app/views/admin/onboarding/features.php:23
 #: app/views/links/form_advanced.php:6
 msgid "No Follow"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:647
-#: app/controllers/PrliLinksController.php:654
-#: app/controllers/PrliLinksController.php:661
+#: app/controllers/PrliLinksController.php:649
+#: app/controllers/PrliLinksController.php:656
+#: app/controllers/PrliLinksController.php:663
 msgid "No Change"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:648
-#: app/controllers/PrliLinksController.php:655
-#: app/controllers/PrliLinksController.php:662
+#: app/controllers/PrliLinksController.php:650
+#: app/controllers/PrliLinksController.php:657
+#: app/controllers/PrliLinksController.php:664
 #: app/views/shared/tinymce_form_popup.php:49
 #: app/views/shared/tinymce_form_popup.php:57
 #: app/views/shared/tinymce_form_popup.php:65
 msgid "Enabled"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:649
-#: app/controllers/PrliLinksController.php:656
-#: app/controllers/PrliLinksController.php:663
+#: app/controllers/PrliLinksController.php:651
+#: app/controllers/PrliLinksController.php:658
+#: app/controllers/PrliLinksController.php:665
 #: app/views/shared/tinymce_form_popup.php:50
 #: app/views/shared/tinymce_form_popup.php:58
 #: app/views/shared/tinymce_form_popup.php:66
 msgid "Disabled"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:652
+#: app/controllers/PrliLinksController.php:654
 #: app/views/admin/onboarding/features.php:34
 #: app/views/links/form_advanced.php:19
 #: app/views/shared/tinymce_form_popup.php:54
 msgid "Sponsored"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:659
+#: app/controllers/PrliLinksController.php:661
 #: app/views/links/form_advanced.php:60
 #: app/views/links/form_advanced.php:63
 #: app/views/shared/tinymce_form_popup.php:62
 msgid "Tracking"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:765
+#: app/controllers/PrliLinksController.php:771
 #: app/views/clicks/list.php:64
 #: app/views/groups/list.php:24
 #: pro/app/views/reports/list.php:20
 msgid "Reset"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:768
+#: app/controllers/PrliLinksController.php:774
 msgid "Tweet"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:769
+#: app/controllers/PrliLinksController.php:775
 #: pro/app/models/PlpOptions.php:185
 msgid "Email"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:772
+#: app/controllers/PrliLinksController.php:778
 msgid "Target &raquo;"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:775
+#: app/controllers/PrliLinksController.php:781
 msgid "PrettyPay™ Link &raquo;"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:775
+#: app/controllers/PrliLinksController.php:781
 msgid "Pretty Link &raquo;"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:798
-#: app/controllers/PrliLinksController.php:799
+#: app/controllers/PrliLinksController.php:804
+#: app/controllers/PrliLinksController.php:805
 msgid "View Split Test Report"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:841
+#: app/controllers/PrliLinksController.php:847
 msgid "Your Pretty Link was Successfully Reset"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:849
+#: app/controllers/PrliLinksController.php:855
 #: app/controllers/PrliStripeController.php:604
 #: app/controllers/PrliStripeController.php:741
 #: app/controllers/PrliStripeController.php:747
-#: app/controllers/PrliStripeController.php:1146
+#: app/controllers/PrliStripeController.php:1141
 #: app/controllers/PrliUpdateController.php:200
 msgid "Bad request"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:853
+#: app/controllers/PrliLinksController.php:859
 msgid "Insufficient permissions"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:857
+#: app/controllers/PrliLinksController.php:863
 #: pro/app/controllers/PlpPublicLinksController.php:37
 msgid "Security check failed"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:886
+#: app/controllers/PrliLinksController.php:892
 msgid "An error occurred creating the link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:923
+#: app/controllers/PrliLinksController.php:929
 msgid "All Groups (Legacy)"
 msgstr ""
 
 #. translators: %s: number of links
-#: app/controllers/PrliLinksController.php:1040
+#: app/controllers/PrliLinksController.php:1073
 msgid "All %s"
 msgstr ""
 
 #. translators: %s: number of links in the trash
-#: app/controllers/PrliLinksController.php:1049
+#: app/controllers/PrliLinksController.php:1082
 msgid "Trash %s"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:1087
-msgid "<a href=\"#\" id=\"prli-broken-links\"><span class=\"tooltip\">Broken</span> Links</a>"
+#: app/controllers/PrliLinksController.php:1122
+#: pro/app/controllers/PlpLinksController.php:1094
+msgid "Find Broken Links"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:1189
+#: app/controllers/PrliLinksController.php:1228
 #: app/helpers/PrliLinksHelper.php:26
 msgid "PrettyPay™ Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:1190
+#: app/controllers/PrliLinksController.php:1229
 msgid "Add New PrettyPay™ Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:1191
+#: app/controllers/PrliLinksController.php:1230
 msgid "Edit PrettyPay™ Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:1192
+#: app/controllers/PrliLinksController.php:1231
 msgid "New PrettyPay™ Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:1193
+#: app/controllers/PrliLinksController.php:1232
 msgid "View PrettyPay™ Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:1194
+#: app/controllers/PrliLinksController.php:1233
 msgid "Search PrettyPay™ Links"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:1195
+#: app/controllers/PrliLinksController.php:1234
 msgid "No PrettyPay™ Links found"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:1196
+#: app/controllers/PrliLinksController.php:1235
 msgid "No PrettyPay™ Links found in Trash"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:1197
+#: app/controllers/PrliLinksController.php:1236
 msgid "Parent PrettyPay™ Link:"
 msgstr ""
 
@@ -967,34 +982,34 @@ msgstr ""
 msgid "No thanks"
 msgstr ""
 
-#: app/controllers/PrliStripeConnectController.php:101
+#: app/controllers/PrliStripeConnectController.php:100
 msgid "Sorry, updating your credentials failed. (security)"
 msgstr ""
 
-#: app/controllers/PrliStripeConnectController.php:111
+#: app/controllers/PrliStripeConnectController.php:110
 msgid "Sorry, updating your credentials failed. (pmt)"
 msgstr ""
 
-#: app/controllers/PrliStripeConnectController.php:170
-#: app/controllers/PrliStripeConnectController.php:175
-#: app/controllers/PrliStripeConnectController.php:200
+#: app/controllers/PrliStripeConnectController.php:169
+#: app/controllers/PrliStripeConnectController.php:174
+#: app/controllers/PrliStripeConnectController.php:199
 msgid "Sorry, the refresh failed."
 msgstr ""
 
-#: app/controllers/PrliStripeConnectController.php:230
-#: app/controllers/PrliStripeConnectController.php:241
+#: app/controllers/PrliStripeConnectController.php:229
+#: app/controllers/PrliStripeConnectController.php:240
 msgid "Sorry, the disconnect failed."
 msgstr ""
 
-#: app/controllers/PrliStripeConnectController.php:308
+#: app/controllers/PrliStripeConnectController.php:307
 msgid "Get Paid the Pretty Links Way!"
 msgstr ""
 
-#: app/controllers/PrliStripeConnectController.php:312
+#: app/controllers/PrliStripeConnectController.php:311
 msgid "Introducing %1$sNEW PrettyPay™ Links!%2$s Effortlessly accept payments right on your site with %1$sbrandable checkout links%2$s and watch your income soar. No detours, no distractions – just straightforward, secure transactions that make life easier for you and your customers."
 msgstr ""
 
-#: app/controllers/PrliStripeConnectController.php:318
+#: app/controllers/PrliStripeConnectController.php:317
 msgid "Learn More"
 msgstr ""
 
@@ -1076,7 +1091,7 @@ msgstr ""
 
 #: app/controllers/PrliStripeController.php:1003
 #: app/views/admin/payments/customer_portal_notice.php:17
-#: app/views/admin/payments/options.php:208
+#: app/views/admin/payments/options.php:168
 msgid "Configure Customer Portal"
 msgstr ""
 
@@ -1085,7 +1100,7 @@ msgid "The Customer Portal is not yet configured."
 msgstr ""
 
 #. translators: %1$s: open strong tag, %2$s: close strong tag, %3$s: the error message
-#: app/controllers/PrliStripeController.php:1133
+#: app/controllers/PrliStripeController.php:1128
 msgid "%1$sError saving Customer Portal:%2$s %3$s"
 msgstr ""
 
@@ -1171,6 +1186,10 @@ msgstr ""
 msgid "To restore automatic updates, %1$sinstall the correct edition%2$s of Pretty Links."
 msgstr ""
 
+#: app/controllers/PrliUpdateController.php:804
+msgid "Products Display"
+msgstr ""
+
 #: app/controllers/PrliXmlRpcController.php:36
 #: app/controllers/PrliXmlRpcController.php:103
 #: app/controllers/PrliXmlRpcController.php:152
@@ -1243,21 +1262,21 @@ msgstr ""
 msgid "There was an error fetching your Pretty Link URL"
 msgstr ""
 
-#: app/helpers/PrliAppHelper.php:21
+#: app/helpers/PrliAppHelper.php:20
 msgid "Upgrade to Pro to unlock this feature"
 msgstr ""
 
-#: app/helpers/PrliAppHelper.php:40
+#: app/helpers/PrliAppHelper.php:39
 msgid "- Auto Create New Page -"
 msgstr ""
 
-#: app/helpers/PrliAppHelper.php:49
+#: app/helpers/PrliAppHelper.php:48
 #: app/views/groups/list.php:78
 #: pro/app/views/reports/list.php:71
 msgid "Edit"
 msgstr ""
 
-#: app/helpers/PrliAppHelper.php:50
+#: app/helpers/PrliAppHelper.php:49
 #: pro/app/views/reports/list.php:73
 msgid "View"
 msgstr ""
@@ -1790,9 +1809,9 @@ msgstr ""
 msgid "Let's kick things off by activating your license."
 msgstr ""
 
+#: app/views/admin/onboarding/license.php:18
 #: app/views/admin/onboarding/nav/category.php:10
 #: app/views/admin/onboarding/nav/finish.php:3
-#: app/views/admin/onboarding/nav/license.php:7
 #: app/views/admin/onboarding/nav/pretty-link.php:10
 msgid "Skip"
 msgstr ""
@@ -1800,7 +1819,7 @@ msgstr ""
 #: app/views/admin/onboarding/nav/category.php:13
 #: app/views/admin/onboarding/nav/features.php:3
 #: app/views/admin/onboarding/nav/finish.php:6
-#: app/views/admin/onboarding/nav/license.php:11
+#: app/views/admin/onboarding/nav/license.php:7
 #: app/views/admin/onboarding/nav/pretty-link.php:13
 msgid "Continue"
 msgstr ""
@@ -2196,8 +2215,8 @@ msgid "Leverage the persuasive power of visually appealing content to captivate 
 msgstr ""
 
 #: app/views/admin/payments/customer_portal_notice.php:3
-#: app/views/admin/payments/options.php:192
-#: app/views/admin/payments/options.php:194
+#: app/views/admin/payments/options.php:152
+#: app/views/admin/payments/options.php:154
 msgid "Customer Portal"
 msgstr ""
 
@@ -2268,151 +2287,127 @@ msgstr ""
 msgid "\"Connect with Stripe\" button"
 msgstr ""
 
-#: app/views/admin/payments/options.php:108
-msgid "Live Publishable Key*"
-msgstr ""
-
-#: app/views/admin/payments/options.php:118
-msgid "Live Secret Key*"
-msgstr ""
-
-#: app/views/admin/payments/options.php:128
-msgid "Test Publishable Key*"
-msgstr ""
-
-#: app/views/admin/payments/options.php:138
-msgid "Test Secret Key*"
-msgstr ""
-
-#: app/views/admin/payments/options.php:154
+#: app/views/admin/payments/options.php:114
 msgid "The page that customers will be redirected to after making a payment using a PrettyPay™ Link, this can be overridden on individual PrettyPay™ Links."
 msgstr ""
 
-#: app/views/admin/payments/options.php:163
+#: app/views/admin/payments/options.php:123
 msgid "Homepage"
 msgstr ""
 
-#: app/views/admin/payments/options.php:171
-#: app/views/admin/payments/options.php:173
+#: app/views/admin/payments/options.php:131
+#: app/views/admin/payments/options.php:133
 msgid "Default Currency"
 msgstr ""
 
-#: app/views/admin/payments/options.php:174
+#: app/views/admin/payments/options.php:134
 msgid "Set the currency that is selected by default when creating products."
 msgstr ""
 
-#: app/views/admin/payments/options.php:180
+#: app/views/admin/payments/options.php:140
 #: app/views/links/prettypay_link_stripe.php:44
 msgid "Currency"
 msgstr ""
 
-#: app/views/admin/payments/options.php:195
+#: app/views/admin/payments/options.php:155
 msgid "Configure the customer portal where customers can manage their recurring PrettyPay™ Link subscriptions."
 msgstr ""
 
-#: app/views/admin/payments/options.php:222
-#: app/views/admin/payments/options.php:224
+#: app/views/admin/payments/options.php:182
+#: app/views/admin/payments/options.php:184
 msgid "Portal Header"
 msgstr ""
 
-#: app/views/admin/payments/options.php:225
+#: app/views/admin/payments/options.php:185
 msgid "The messaging shown to customers in the portal."
 msgstr ""
 
-#: app/views/admin/payments/options.php:236
-#: app/views/admin/payments/options.php:238
+#: app/views/admin/payments/options.php:196
+#: app/views/admin/payments/options.php:198
 msgid "Privacy Policy URL"
 msgstr ""
 
-#: app/views/admin/payments/options.php:239
+#: app/views/admin/payments/options.php:199
 msgid "A link to the business's publicly available privacy policy."
 msgstr ""
 
-#: app/views/admin/payments/options.php:250
-#: app/views/admin/payments/options.php:252
+#: app/views/admin/payments/options.php:210
+#: app/views/admin/payments/options.php:212
 msgid "Terms of Service URL"
 msgstr ""
 
-#: app/views/admin/payments/options.php:253
+#: app/views/admin/payments/options.php:213
 msgid "A link to the business's publicly available terms of service."
 msgstr ""
 
-#: app/views/admin/payments/options.php:263
+#: app/views/admin/payments/options.php:223
 msgid "Customer Update"
 msgstr ""
 
-#: app/views/admin/payments/options.php:266
+#: app/views/admin/payments/options.php:226
 msgid "Allow customers to update their data"
 msgstr ""
 
-#: app/views/admin/payments/options.php:266
-#: app/views/admin/payments/options.php:291
-#: app/views/admin/payments/options.php:299
-#: app/views/admin/payments/options.php:323
+#: app/views/admin/payments/options.php:226
+#: app/views/admin/payments/options.php:251
+#: app/views/admin/payments/options.php:259
+#: app/views/admin/payments/options.php:275
 msgid "Recommended"
 msgstr ""
 
-#: app/views/admin/payments/options.php:270
+#: app/views/admin/payments/options.php:230
 msgid "Allow updating names"
 msgstr ""
 
-#: app/views/admin/payments/options.php:271
+#: app/views/admin/payments/options.php:231
 msgid "Allow updating email addresses"
 msgstr ""
 
-#: app/views/admin/payments/options.php:272
+#: app/views/admin/payments/options.php:232
 msgid "Allow updating billing addresses"
 msgstr ""
 
-#: app/views/admin/payments/options.php:273
+#: app/views/admin/payments/options.php:233
 msgid "Allow updating shipping addresses"
 msgstr ""
 
-#: app/views/admin/payments/options.php:274
+#: app/views/admin/payments/options.php:234
 msgid "Allow updating phone numbers"
 msgstr ""
 
-#: app/views/admin/payments/options.php:275
+#: app/views/admin/payments/options.php:235
 msgid "Allow updating tax IDs"
 msgstr ""
 
-#: app/views/admin/payments/options.php:288
+#: app/views/admin/payments/options.php:248
 msgid "Payment Method Update"
 msgstr ""
 
-#: app/views/admin/payments/options.php:291
+#: app/views/admin/payments/options.php:251
 msgid "Allow customers to update their payment method"
 msgstr ""
 
-#: app/views/admin/payments/options.php:296
+#: app/views/admin/payments/options.php:256
 msgid "Subscription Cancel"
 msgstr ""
 
-#: app/views/admin/payments/options.php:299
+#: app/views/admin/payments/options.php:259
 msgid "Allow subscriptions to be cancelled"
 msgstr ""
 
-#: app/views/admin/payments/options.php:303
+#: app/views/admin/payments/options.php:263
 msgid "Cancel at end of billing period (customer can renew until then)"
 msgstr ""
 
-#: app/views/admin/payments/options.php:304
+#: app/views/admin/payments/options.php:264
 msgid "Cancel subscriptions immediately"
 msgstr ""
 
-#: app/views/admin/payments/options.php:312
-msgid "Subscription Pause"
-msgstr ""
-
-#: app/views/admin/payments/options.php:315
-msgid "Allow subscriptions to be paused"
-msgstr ""
-
-#: app/views/admin/payments/options.php:320
+#: app/views/admin/payments/options.php:272
 msgid "Invoice History"
 msgstr ""
 
-#: app/views/admin/payments/options.php:323
+#: app/views/admin/payments/options.php:275
 msgid "Show a history of paid invoices"
 msgstr ""
 
@@ -2649,11 +2644,17 @@ msgstr ""
 
 #: app/views/admin/upgrade/groups.php:8
 #: app/views/admin/upgrade/groups.php:30
+#: app/views/admin/upgrade/products.php:8
+#: app/views/admin/upgrade/products.php:27
 msgid "Title"
 msgstr ""
 
 #: app/views/admin/upgrade/groups.php:23
 msgid "No Display Groups found"
+msgstr ""
+
+#: app/views/admin/upgrade/products.php:20
+msgid "No Product Display found"
 msgstr ""
 
 #: app/views/admin/upgrade/reports.php:8
@@ -2939,12 +2940,6 @@ msgstr ""
 
 #: app/views/links/form.php:36
 msgid "Advanced"
-msgstr ""
-
-#: app/views/links/form.php:39
-#: app/views/links/form_product_display.php:17
-#: app/views/options/form.php:61
-msgid "Product Display"
 msgstr ""
 
 #: app/views/links/form_advanced.php:9
@@ -3250,7 +3245,7 @@ msgid "Daily"
 msgstr ""
 
 #: app/views/links/prettypay_link_stripe.php:67
-#: pro/app/controllers/PlpLinksController.php:1258
+#: pro/app/controllers/PlpLinksController.php:1267
 msgid "Weekly"
 msgstr ""
 
@@ -5425,116 +5420,107 @@ msgstr ""
 msgid "The Link Health Email Addresses field must contain 1 or more valid email addresses."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:885
-msgid "View QR Code for this link: %s"
-msgstr ""
-
-#: pro/app/controllers/PlpLinksController.php:885
-#: pro/app/controllers/PlpLinksController.php:889
-msgid "QR Code"
-msgstr ""
-
-#: pro/app/controllers/PlpLinksController.php:889
+#: pro/app/controllers/PlpLinksController.php:891
 msgid "Download QR Code for this link: %s"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:908
+#: pro/app/controllers/PlpLinksController.php:891
+msgid "QR Code"
+msgstr ""
+
+#: pro/app/controllers/PlpLinksController.php:910
 msgid "Check health status for this link: %s"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:909
-#: pro/app/controllers/PlpLinksController.php:914
+#: pro/app/controllers/PlpLinksController.php:911
+#: pro/app/controllers/PlpLinksController.php:916
 #: pro/app/views/metaboxes/link-health.php:13
 #: pro/app/views/metaboxes/link-health.php:18
 msgid "Check Health"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:910
+#: pro/app/controllers/PlpLinksController.php:912
 #: pro/app/views/metaboxes/link-health.php:14
 msgid "Checking..."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:988
+#: pro/app/controllers/PlpLinksController.php:996
 msgid "This link expired on %1$s and will now cause a 404 error when visited"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:991
+#: pro/app/controllers/PlpLinksController.php:999
 msgid "This link expired on %1$s and now redirects to %2$s"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:995
+#: pro/app/controllers/PlpLinksController.php:1003
 msgid "This link is set to expire after the date %s"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1006
+#: pro/app/controllers/PlpLinksController.php:1014
 msgid "This link expired after %d clicks and will now cause a 404 error when visited"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1009
+#: pro/app/controllers/PlpLinksController.php:1017
 msgid "This link expired after %1$d clicks and now redirects to %2$s"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1013
+#: pro/app/controllers/PlpLinksController.php:1021
 msgid "This link is set to expire after %d clicks"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1021
+#: pro/app/controllers/PlpLinksController.php:1029
 msgid "This link has additional Target URL rotations"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1024
+#: pro/app/controllers/PlpLinksController.php:1032
 msgid "This link has additional Geographic Target URLs"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1027
+#: pro/app/controllers/PlpLinksController.php:1035
 msgid "This link has additional Technology Dependent Conditional Target URLs"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1032
+#: pro/app/controllers/PlpLinksController.php:1040
 msgid "A Time Period Redirect is currently active for this link. When visited it will currently redirect to %s rather than the Target URL unless the link is expired."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1036
+#: pro/app/controllers/PlpLinksController.php:1044
 msgid "Time Period Redirects have been setup for this link but the current time is not within any of them currently."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1083
-msgid "<a href=\"%1$s\" class=\"%2$s\">Broken Links <span class=\"count\">(%3$d)</span></a>"
-msgstr ""
-
-#: pro/app/controllers/PlpLinksController.php:1197
+#: pro/app/controllers/PlpLinksController.php:1206
 msgid "[Pretty Links] Broken Links Weekly Report"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1252
+#: pro/app/controllers/PlpLinksController.php:1261
 msgid "Every 15 Minutes"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1277
+#: pro/app/controllers/PlpLinksController.php:1286
 msgid "Status"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1365
+#: pro/app/controllers/PlpLinksController.php:1374
 msgid "Not yet checked."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1368
+#: pro/app/controllers/PlpLinksController.php:1377
 msgid "Last checked on %s."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1372
+#: pro/app/controllers/PlpLinksController.php:1381
 msgid "Last checked unknown."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1376
+#: pro/app/controllers/PlpLinksController.php:1385
 msgid "Waiting"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1377
+#: pro/app/controllers/PlpLinksController.php:1386
 msgid "Okay"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1378
+#: pro/app/controllers/PlpLinksController.php:1387
 msgid "Broken"
 msgstr ""
 
@@ -6770,10 +6756,6 @@ msgstr ""
 
 #: pro/app/views/options/general.php:59
 msgid "Contributor"
-msgstr ""
-
-#: pro/app/views/options/general.php:60
-msgid "Subscriber"
 msgstr ""
 
 #: pro/app/views/public/form.php:28

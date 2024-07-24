@@ -118,9 +118,6 @@ class PrliStripeHelper {
         ),
         'subscription_cancel' => array(
           'enabled' => true
-        ),
-        'subscription_pause' => array(
-          'enabled' => false
         )
       )
     );

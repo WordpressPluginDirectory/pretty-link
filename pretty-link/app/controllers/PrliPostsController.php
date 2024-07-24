@@ -243,7 +243,8 @@ class PrliPostsController extends PrliBaseController {
           'title'      => $result['name'], //Not used currently, but we may want this at some point
           'nofollow'   => (int)$result['nofollow'],
           'sponsored'  => (int)$result['sponsored'],
-          'prettypay_link' => (int) $result['prettypay_link']
+          'prettypay_link' => (int) $result['prettypay_link'],
+          'track_me' => (int) $result['track_me']
         );
       }
 

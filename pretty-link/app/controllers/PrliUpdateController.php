@@ -800,5 +800,10 @@ class PrliUpdateController {
 
     return $license_info;
   }
+  public function upgrade_products() {
+    $section_title = esc_html__( 'Products Display', 'pretty-link' );
+    $upgrade_link = 'https://prettylinks.com/pl/main-menu/upgrade?products';
+    include_once PRLI_VIEWS_PATH . "/admin/upgrade/products.php";
+  }
 
 } //End class

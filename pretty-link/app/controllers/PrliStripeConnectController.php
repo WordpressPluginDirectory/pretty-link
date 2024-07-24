@@ -21,7 +21,6 @@ class PrliStripeConnectController extends PrliBaseController {
     add_action( 'wp_ajax_prli_stripe_connect_update_creds', array( $this, 'process_update_creds' ) );
     add_action( 'wp_ajax_prli_stripe_connect_refresh', array( $this, 'process_refresh_tokens' ) );
     add_action( 'wp_ajax_prli_stripe_connect_disconnect', array( $this, 'process_disconnect' ) );
-    add_action( 'prli-store-options', array( $this, 'store_keys' ) );
   }
 
   /**
@@ -318,21 +317,6 @@ class PrliStripeConnectController extends PrliBaseController {
         <p style="margin-bottom: 12px;"><a href="<?php echo esc_url(admin_url('edit.php?post_type=pretty-link&page=prettypay-links')); ?>" class="button button-primary"><?php esc_html_e('Learn More', 'pretty-link'); ?></a></p>
       </div>
       <?php
-    }
-  }
-
-  public function store_keys() {
-    $fields = array(
-      'prli_stripe_live_publishable_key',
-      'prli_stripe_live_secret_key',
-      'prli_stripe_test_publishable_key',
-      'prli_stripe_test_secret_key'
-    );
-
-    foreach($fields as $field) {
-      if(isset($_POST[$field])) {
-        update_option($field, sanitize_text_field(wp_unslash($_POST[$field])));
-      }
     }
   }
 }

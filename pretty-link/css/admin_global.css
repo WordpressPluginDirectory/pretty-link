@@ -60,3 +60,23 @@
 #menu-posts-pretty-link a[href*="edit.php?post_type=pretty-link&page=prettypay-links"] {
   padding-right: 43px !important;
 }
+.tippy-box {
+  background:#e1e1e1;
+  color: #000;
+  opacity: 1;
+}
+.prli-page .tippy-box .tippy-arrow::before {
+ border-top-color: #e1e1e1;
+ border-bottom-color: #e1e1e1;
+}
+.tippy-box a{
+  color: #000;
+}
+.tippy-content{
+  padding: 10px 19px;
+  font-weight: 500;
+}
+.tippy-content strong {
+  line-height: 2;
+  font-weight: 700;
+}

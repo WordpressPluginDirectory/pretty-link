@@ -19,22 +19,22 @@ class PrliLinksController extends PrliBaseController {
     add_action( 'wp_ajax_prli_quick_create', array($this, 'ajax_quick_create'));
 
     // Add slug and URL to search
-    add_filter( 'posts_search', array($this, 'search_links_table') );
+    add_filter( 'posts_search', array($this, 'search_links_table'), 10, 2 );
 
     // Links table join
-    add_filter( 'posts_where', array($this, 'prettypay_links_filter') );
-    add_filter( 'posts_fields', array($this, 'add_clicks_to_select') );
-    add_filter( 'posts_join', array($this,'join_links_to_posts') );
+    add_filter( 'posts_where', array($this, 'prettypay_links_filter'), 10, 2 );
+    add_filter( 'posts_fields', array($this, 'add_clicks_to_select'), 10, 2 );
+    add_filter( 'posts_join', array($this,'join_links_to_posts'), 10, 2 );
 
     // Legacy Groups Filter
     add_action( 'restrict_manage_posts', array($this,'filter_links_by_legacy_groups') );
-    add_filter( 'posts_where', array($this,'where_links_belong_to_legacy_group') );
+    add_filter( 'posts_where', array($this,'where_links_belong_to_legacy_group'), 10, 2 );
 
     // Alter Quick Links Menu (subsubsub)
     add_filter( 'views_edit-'.PrliLink::$cpt, array($this,'modify_quick_links') );
 
     // Sort links by custom columns
-    add_action( 'posts_orderby', array($this, 'custom_link_sort_orderby') );
+    add_action( 'posts_orderby', array($this, 'custom_link_sort_orderby'), 10, 2 );
 
     add_action('manage_'.PrliLink::$cpt.'_posts_custom_column', array($this,'custom_columns'), 10, 2);
     add_filter('manage_edit-'.PrliLink::$cpt.'_columns', array($this,'columns'));
@@ -55,6 +55,8 @@ class PrliLinksController extends PrliBaseController {
     add_filter('admin_url', array($this, 'add_new_prettypay_link_url'), 10, 2);
     add_filter('submenu_file', array($this, 'highlight_prettypay_menu_item'));
     add_action('current_screen', array($this, 'maybe_change_post_type_labels'));
+    // 3rd Party Compatibility
+    add_filter( 'acf/input/meta_box_priority', array( $this, 'update_acf_meta_box_priority' ), 10 );
   }
 
   public function register_post_type() {
@@ -705,6 +707,10 @@ class PrliLinksController extends PrliBaseController {
   }
 
   public function save_bulk_edit() {
+    if( ! check_ajax_referer( 'prli_admin_link_list_nonce', false, false ) || ! PrliUtils::is_authorized() ) {
+      wp_send_json_error( esc_html__('Security check failed.', 'pretty-link'), 403 );
+    }
+
     global $prli_link;
 
     $post_ids = (isset($_POST['post_ids']) && !empty($_POST['post_ids'])) ? $_POST['post_ids'] : array();
@@ -938,11 +944,15 @@ class PrliLinksController extends PrliBaseController {
    * Add the link click stats to the SELECT part of the post query
    *
    * @param  string $fields
+   * @param WP_Query $query Wordpress Query.
    * @return string
    */
-  public function add_clicks_to_select($fields) {
+  public function add_clicks_to_select($fields, $query) {
     global $typenow, $prli_click, $prli_options, $prli_link_meta;
-
+    $is_pl_query = PrliLinksHelper::is_pretty_link_query($query);
+    if ( ! $is_pl_query ) {
+      return $fields;
+    }
     if( $typenow == PrliLink::$cpt ) {
       if($prli_options->extended_tracking != 'count') {
         $op = $prli_click->get_exclude_where_clause( ' AND' );
@@ -970,10 +980,19 @@ class PrliLinksController extends PrliBaseController {
 
     return $fields;
   }
-
-  public function prettypay_links_filter($where) {
+  /**
+   * PrettyPay links Filters.
+   *
+   * @param string $where The current WHERE clause of the query.
+   * @param WP_Query $query The current WP_Query object.
+   * @return string The modified WHERE clause.
+   */
+  public function prettypay_links_filter($where, $query) {
     global $typenow;
-
+    $is_pl_query = PrliLinksHelper::is_pretty_link_query($query);
+    if ( ! $is_pl_query ) {
+      return $where;
+    }
     if($typenow == PrliLink::$cpt && is_admin()) {
       if(!empty($_REQUEST['prettypay'])) {
         $where .= " AND li.prettypay_link = 1";
@@ -985,11 +1004,19 @@ class PrliLinksController extends PrliBaseController {
 
     return $where;
   }
-
-  // Join for searching
-  public function join_links_to_posts($join) {
+  /**
+   * Join for searching.
+   *
+   * @param string $join The current join clause.
+   * @param WP_Query $query The current WP_Query object.
+   * @return string The modified join clause.
+   */
+  public function join_links_to_posts($join, $query) {
     global $wpdb, $typenow;
-
+    $is_pl_query = PrliLinksHelper::is_pretty_link_query($query);
+    if ( ! $is_pl_query ) {
+      return $join;
+    }
     if( $typenow == PrliLink::$cpt ) {
       $join .= "JOIN {$wpdb->prefix}prli_links AS li ON {$wpdb->posts}.ID = li.link_cpt_id ";
     }
@@ -997,21 +1024,27 @@ class PrliLinksController extends PrliBaseController {
     return $join;
   }
 
-  public function search_links_table($where) {
+  public function search_links_table($where, $query) {
     global $wp_query, $wpdb, $typenow;
-
+    $is_pl_query = PrliLinksHelper::is_pretty_link_query($query);
+    if ( ! $is_pl_query ) {
+      return $where;
+    }
     if( $typenow == PrliLink::$cpt && !empty($wp_query->query_vars['s']) ) {
       $search = '%' . $wpdb->esc_like($wp_query->query_vars['s']) . '%';
-      $where .= $wpdb->prepare("OR (li.url LIKE %s OR li.slug LIKE %s) ", $search, $search);
+      $where = $wpdb->prepare(" AND ({$wpdb->posts}.post_title LIKE %s OR {$wpdb->posts}.post_excerpt LIKE %s OR {$wpdb->posts}.post_content LIKE %s OR li.url LIKE %s OR li.slug LIKE %s) ", $search, $search, $search, $search, $search);
     }
 
     return $where;
   }
 
   // Where clause for searching link groups
-  public function where_links_belong_to_legacy_group( $where ) {
+  public function where_links_belong_to_legacy_group( $where, $query ) {
     global $wp_query, $wpdb, $typenow;
-
+    $is_pl_query = PrliLinksHelper::is_pretty_link_query($query);
+    if ( ! $is_pl_query ) {
+      return $where;
+    }
     if( $typenow == PrliLink::$cpt &&
         isset($_GET['group']) &&
         is_numeric($_GET['group']) &&
@@ -1084,16 +1117,22 @@ class PrliLinksController extends PrliBaseController {
     }
 
     if(!$plp_update->is_installed()) {
-      $views['prli_broken_links'] = __('<a href="#" id="prli-broken-links"><span class="tooltip">Broken</span> Links</a>', 'pretty-link');
+      $views['prli_broken_links'] = sprintf(
+          '<a href="#" id="prli-broken-links"><span class="tooltip">%s</span></a>',
+          esc_html__('Find Broken Links', 'pretty-link')
+      );
     }
 
     return apply_filters('prli_quick_links', $views);
   }
 
   // Add custom sort orderbys
-  public function custom_link_sort_orderby($orderby) {
+  public function custom_link_sort_orderby($orderby, $query) {
     global $wp_query, $wpdb, $typenow;
-
+    $is_pl_query = PrliLinksHelper::is_pretty_link_query($query);
+    if ( ! $is_pl_query ) {
+      return $orderby;
+    }
     if( $typenow == PrliLink::$cpt &&
         isset($_GET['orderby']) && isset($_GET['order']) ) {
 
@@ -1225,5 +1264,18 @@ class PrliLinksController extends PrliBaseController {
     }
 
     include_once PRLI_VIEWS_PATH . "/admin/popups/prettypay.php";
+  }
+/**
+ * Updates the priority of the ACF meta box.
+ *
+ * @param int $priority The current priority of the meta box.
+ * @return string The updated priority of the meta box.
+ */
+  public function update_acf_meta_box_priority( $priority ) {
+    global $typenow;
+    if ( $typenow == PrliLink::$cpt ) {
+      $priority = 'default';
+    }
+    return $priority;
   }
 }

@@ -102,46 +102,6 @@ $connect_status = PrliStripeConnect::stripe_connect_status();
 
         </td>
       </tr>
-      <tr valign="top" <?php echo $classes; ?>>
-        <th scope="row">
-          <label for="prli_stripe_live_publishable_key">
-            <?php esc_html_e('Live Publishable Key*', 'pretty-link'); ?>
-          </label>
-        </th>
-        <td>
-          <input type="text" name="prli_stripe_live_publishable_key" class="regular-text" value="<?php echo trim(get_option('prli_stripe_live_publishable_key')); ?>">
-        </td>
-      </tr>
-      <tr valign="top" <?php echo $classes; ?>>
-        <th scope="row">
-          <label for="prli_stripe_live_secret_key">
-            <?php esc_html_e('Live Secret Key*', 'pretty-link'); ?>
-          </label>
-        </th>
-        <td>
-          <input type="text" name="prli_stripe_live_secret_key" class="regular-text" value="<?php echo trim(get_option('prli_stripe_live_secret_key')); ?>">
-        </td>
-      </tr>
-      <tr valign="top" <?php echo $classes; ?>>
-        <th scope="row">
-          <label for="prli_stripe_test_publishable_key">
-            <?php esc_html_e('Test Publishable Key*', 'pretty-link'); ?>
-          </label>
-        </th>
-        <td>
-          <input type="text" name="prli_stripe_test_publishable_key" class="regular-text" value="<?php echo trim(get_option('prli_stripe_test_publishable_key')); ?>">
-        </td>
-      </tr>
-      <tr valign="top" <?php echo $classes; ?>>
-        <th scope="row">
-          <label for="prli_stripe_test_secret_key">
-            <?php esc_html_e('Test Secret Key*', 'pretty-link'); ?>
-          </label>
-        </th>
-        <td>
-          <input type="text" name="prli_stripe_test_secret_key" class="regular-text" value="<?php echo trim(get_option('prli_stripe_test_secret_key')); ?>">
-        </td>
-      </tr>
     </tbody>
   </table>
   <table class="form-table">
@@ -305,14 +265,6 @@ $connect_status = PrliStripeConnect::stripe_connect_status();
                   </select>
                 </div>
               </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <label for="prli-portal-subscription-pause"><?php esc_html_e('Subscription Pause', 'pretty-link'); ?></label>
-            </th>
-            <td>
-              <label for="prli-portal-subscription-pause"><input type="checkbox" id="prli-portal-subscription-pause" name="prli_portal_subscription_pause_enabled" <?php checked(PrliStripeHelper::get_portal_config_value('features.subscription_pause.enabled')); ?>> <?php esc_html_e('Allow subscriptions to be paused', 'pretty-link'); ?></label>
             </td>
           </tr>
           <tr>

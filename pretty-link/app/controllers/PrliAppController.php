@@ -201,6 +201,14 @@ class PrliAppController extends PrliBaseController {
       );
       add_submenu_page(
         "edit.php?post_type={$pl_link_cpt}",
+        esc_html__('Product Display', 'pretty-link'),
+        esc_html__('Product Display', 'pretty-link'),
+        $role,
+        "pretty-link-upgrade-products",
+        array( $plp_update, 'upgrade_products' )
+      );
+      add_submenu_page(
+        "edit.php?post_type={$pl_link_cpt}",
         esc_html__('Import / Export', 'pretty-link'),
         esc_html__('Import / Export', 'pretty-link'),
         $role,
@@ -314,6 +322,7 @@ class PrliAppController extends PrliBaseController {
     $categories_ctax = class_exists('PlpLinkCategoriesController') ? PlpLinkCategoriesController::$ctax : 'pretty-link-category';
     $tags_ctax = class_exists('PlpLinkTagsController') ? PlpLinkTagsController::$ctax : 'pretty-link-tag';
     $groups_cpt = class_exists('\Pretty_Link\Product_Displays\Controllers\GroupsCtrl') ? \Pretty_Link\Product_Displays\Models\Group::$cpt : 'pretty-link-groups';
+    $products_cpt = class_exists('\Pretty_Link\Product_Displays\Controllers\ProductsCtrl') ? \Pretty_Link\Product_Displays\Models\Product::$cpt : 'pretty-link-products';
 
     $include_array = array(
       $slug,
@@ -330,6 +339,8 @@ class PrliAppController extends PrliBaseController {
       'https://prettylinks.com/pl/main-menu/upgrade?reports',
       "edit.php?post_type={$groups_cpt}",
       "post-new.php?post_type={$groups_cpt}",
+      "edit.php?post_type={$products_cpt}",
+      "post-new.php?post_type={$products_cpt}",
       'pretty-link-tools',
       'pretty-link-options',
       'plp-import-export',
@@ -455,20 +466,6 @@ class PrliAppController extends PrliBaseController {
         PRLI_VERSION
       );
 
-      wp_register_script(
-        'prli-tooltip',
-        PRLI_JS_URL.'/tooltip.js',
-        array('jquery', 'wp-pointer'),
-        PRLI_VERSION
-      );
-      wp_localize_script(
-        'prli-tooltip',
-        'PrliTooltip',
-        array(
-          'show_about_notice' => $this->show_about_notice(),
-          'about_notice' => $this->about_notice()
-        )
-      );
       wp_enqueue_script(
         'prli-admin-shared',
         PRLI_JS_URL.'/admin_shared.js',
@@ -476,7 +473,6 @@ class PrliAppController extends PrliBaseController {
           'jquery',
           'jquery-ui-datepicker',
           'jquery-ui-sortable',
-          'prli-tooltip'
         ),
         PRLI_VERSION
       );
@@ -524,7 +520,8 @@ class PrliAppController extends PrliBaseController {
         'broken_link_text' => sprintf(
           __('To access Link Health, upgrade to <a href="%s" class="prli-link-health-upgrade">Pretty Links Pro.</a>', 'pretty-link'),
           esc_url(admin_url('edit.php?post_type=pretty-link&page=pretty-link-updates#prli_upgrade'))
-        )
+        ),
+        'nonce' => wp_create_nonce('prli_admin_link_list_nonce')
       );
       wp_localize_script( 'prli-admin-link-list', 'PrliLinkList', $links_js_obj );
 
@@ -571,6 +568,16 @@ class PrliAppController extends PrliBaseController {
       wp_localize_script('pl-reports', 'PrliReport', PrliReportsController::chart_data());
     }
 
+    if ( $current_screen->post_type == PrliLink::$cpt || preg_match('/_page_pretty-link-(tools|options|clicks)$/', $hook ) ){
+      wp_enqueue_script('prli-popper-js', PRLI_VENDOR_LIB_URL . '/popperjs/popper.min.js', array('jquery'), PRLI_VERSION, true);
+      wp_enqueue_script('prli-tippy-js', PRLI_VENDOR_LIB_URL . '/tippy.js/tippy-bundle.umd.min.js', array('jquery', 'prli-popper-js'), PRLI_VERSION, true);
+      wp_enqueue_script(
+          'prli-tooltip',
+          PRLI_JS_URL.'/tooltip.js',
+          array('jquery'),
+          PRLI_VERSION
+        );
+    }
 
     $page_vars = compact('is_pl_page', 'is_link_page', 'is_link_listing_page', 'is_link_edit_page', 'is_link_new_page');
     do_action('prli_load_admin_scripts', $hook, $page_vars);

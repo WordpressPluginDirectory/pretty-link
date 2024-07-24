@@ -1147,7 +1147,7 @@ class PrliUtils {
   }
 
   public static function site_domain() {
-    return preg_replace('#^https?://(www\.)?([^\?\/]*)#', '$2', home_url());
+    return preg_replace('#^https?://(www\.)?([^\?\/]*)#', '$2', get_option('home'));
   }
 
   public static function is_prli_admin($user_id=null) {
